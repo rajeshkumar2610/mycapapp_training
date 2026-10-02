@@ -1,0 +1,64 @@
+{
+ "xsappname": "mycapapp",
+ "scopes": [
+  {
+   "name": "$XSAPPNAME.Display",
+   "description": "display"
+  },
+  {
+   "name": "$XSAPPNAME.Edit",
+   "description": "edit"
+  }
+ ],
+ "attributes": [
+  {
+   "name": "spiderman",
+   "description": "spiderman",
+   "valueType": "string"
+  }
+ ],
+ "role-templates": [
+  {
+   "name": "Viewer",
+   "description": "View all employee details",
+   "default-role-name": "Viewer: Authorized to Read employee detais",
+   "scope-references": [
+    "$XSAPPNAME.Display"
+   ],
+    "attribute-references": [
+     "spiderman"
+    ]
+  },
+  {
+   "name": "Editor",
+   "description": "Edit all employeedetails",
+   "default-role-name": "Editor: Authorized to Edit employee detais",
+   "scope-references": [
+    "$XSAPPNAME.Edit"
+   ]
+  },
+  {
+   "name": "Admin",
+   "description": "View and edit all employeedetails",
+   "default-role-name": "Admin: Authorized to Edit and Display employee detais",
+   "scope-references": [
+    "$XSAPPNAME.Edit",
+    "$XSAPPNAME.Display"
+   ]
+  }
+ ],
+ "authorities": [
+  "$ACCEPT_GRANTED_AUTHORITIES"
+ ],
+ "oauth2-configuration": {
+  "token-validity": 900,
+  "redirect-uris": [
+   "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+  ],
+  "credential-types": [
+   "binding-secret",
+   "x509"
+  ]
+ },
+ "xsenableasyncservice": "true"
+}
