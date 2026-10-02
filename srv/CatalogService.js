@@ -36,7 +36,7 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
         // UPDATE table SET gross_amount = gross + 20000 WHERE node_key = pk
         await tx.update(PurchaseOrderSet).with({
           GROSS_AMOUNT: {'+=': 20000},
-          NOTE: 'boosted!!'
+          NOTE: 'boosted done!!'
         }).where(primaryKey);
 
         //Query data which is now updated in database
