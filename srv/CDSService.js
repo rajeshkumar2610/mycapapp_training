@@ -33,7 +33,8 @@ module.exports = class CDSService extends cds.ApplicationService { init() {
     console.log('Before CREATE/UPDATE ItemSet', req.data)
   })
   this.after ('READ', ItemSet, async (itemSet, req) => {
-    console.log('After READ ItemSet', itemSet)
+    console.log('After READ ItemSet', itemSet);
+    console.log('commit');
   })
 
 
