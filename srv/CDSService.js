@@ -34,7 +34,7 @@ module.exports = class CDSService extends cds.ApplicationService { init() {
   })
   this.after ('READ', ItemSet, async (itemSet, req) => {
     console.log('After READ ItemSet', itemSet);
-    console.log('commit');
+    console.log('commit Syncup');
   })
 
 
