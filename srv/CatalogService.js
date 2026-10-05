@@ -28,7 +28,7 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
         let primaryKey = req.params[0];
 
         console.log("aaya kya ", JSON.stringify(primaryKey));
-        conlog.log("buggy code here");
+
         //CDS QL
         //Get the CDS transaction api object
         const tx = cds.tx(req);
