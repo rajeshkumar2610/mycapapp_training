@@ -1,6 +1,11 @@
 using CatalogService as service from '../../srv/CatalogService';
 
-annotate urchase Orders',
+annotate service.PurchaseOrderSet with @(
+
+    //Header info to get title on table and next screen top section
+    UI.HeaderInfo:{
+        TypeName: 'Purchase Order',
+        TypeNamePlural: 'Purchase Orders',
         Title: {Value: PO_ID},
         Description: {Value: PARTNER_GUID.COMPANY_NAME}
     },
